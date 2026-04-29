@@ -1,10 +1,39 @@
 "use client";
 
+import { Check } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 type CosmeticsQuizCardProps = {
   className?: string;
 };
+
+const ChoiceRadio = ({
+  name,
+  value,
+  label,
+}: {
+  name: string;
+  value: string;
+  label: string;
+}) => (
+  <label className="flex cursor-pointer items-center gap-2 text-[0.8125rem] text-gray-700">
+    <input
+      type="radio"
+      name={name}
+      value={value}
+      className="peer sr-only focus:outline-none"
+    />
+    <span className="flex size-[1.125rem] shrink-0 items-center justify-center rounded-sm border border-gray-300 bg-white transition-colors peer-checked:border-green-500 peer-checked:bg-green-500 peer-checked:[&_svg]:opacity-100">
+      <Check
+        aria-hidden
+        strokeWidth={3}
+        className="size-[0.65rem] text-white opacity-0"
+      />
+    </span>
+    {label}
+  </label>
+);
 
 export const CosmeticsQuizCard = ({ className }: CosmeticsQuizCardProps) => (
   <article
@@ -30,24 +59,8 @@ export const CosmeticsQuizCard = ({ className }: CosmeticsQuizCardProps) => (
                 Есть медицинское образование?
               </legend>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                <label className="flex cursor-pointer items-center gap-2 text-[0.8125rem] text-gray-700">
-                  <input
-                    type="radio"
-                    name="med-education"
-                    value="yes"
-                    className="size-3.5 accent-green-500"
-                  />
-                  Да
-                </label>
-                <label className="flex cursor-pointer items-center gap-2 text-[0.8125rem] text-gray-700">
-                  <input
-                    type="radio"
-                    name="med-education"
-                    value="no"
-                    className="size-3.5 accent-green-500"
-                  />
-                  Нет
-                </label>
+                <ChoiceRadio name="med-education" value="yes" label="Да" />
+                <ChoiceRadio name="med-education" value="no" label="Нет" />
               </div>
             </fieldset>
 
@@ -56,24 +69,8 @@ export const CosmeticsQuizCard = ({ className }: CosmeticsQuizCardProps) => (
                 Ты работаешь в бьюти сфере?
               </legend>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                <label className="flex cursor-pointer items-center gap-2 text-[0.8125rem] text-gray-700">
-                  <input
-                    type="radio"
-                    name="beauty-work"
-                    value="yes"
-                    className="size-3.5 accent-green-500"
-                  />
-                  Да
-                </label>
-                <label className="flex cursor-pointer items-center gap-2 text-[0.8125rem] text-gray-700">
-                  <input
-                    type="radio"
-                    name="beauty-work"
-                    value="no"
-                    className="size-3.5 accent-green-500"
-                  />
-                  Нет
-                </label>
+                <ChoiceRadio name="beauty-work" value="yes" label="Да" />
+                <ChoiceRadio name="beauty-work" value="no" label="Нет" />
               </div>
             </fieldset>
           </div>

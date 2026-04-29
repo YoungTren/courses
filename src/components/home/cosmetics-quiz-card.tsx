@@ -13,7 +13,7 @@ export const CosmeticsQuizCard = ({ className }: CosmeticsQuizCardProps) => (
       className,
     )}
   >
-    <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col items-center gap-6 bg-[#F4F5F7]">
+    <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col items-center gap-6 bg-[#F4F5F7] lg:justify-center lg:py-2">
       <h2 className="w-full max-w-4xl px-1 text-center font-serif text-base leading-snug tracking-tight text-[#0f172a] sm:text-lg md:text-[clamp(0.9375rem,1.65vw,1.125rem)] md:whitespace-nowrap lg:text-[clamp(1rem,1.5vw,1.25rem)]">
         Пройди легкий тест и получи план по отбеливанию зубов
       </h2>

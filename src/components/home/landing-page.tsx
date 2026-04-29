@@ -8,7 +8,7 @@ import { WhyUsAnimatedShell } from "@/components/home/why-us-animated-shell";
 import { cn } from "@/lib/utils";
 
 const heroTeethImageSrc = "/hero-whitening-led.png";
-const quizTeethImageSrc = "/hero-teeth-whitening.png";
+const quizTeethImageSrc = "/quiz-test-visual.png";
 
 /** Стабильное кадрирование между локальной сборкой и Vercel (одинаковый object-position и sizes). */
 const heroTeethImageSizes =
@@ -159,7 +159,7 @@ export const LandingPage = () => {
             <div className="relative aspect-[16/9] min-h-[14rem] w-full shrink-0 sm:min-h-[18rem] lg:aspect-auto lg:h-auto lg:min-h-[22rem] lg:w-[46%] lg:flex-none lg:self-stretch">
               <Image
                 src={quizTeethImageSrc}
-                alt="Косметическое отбеливание зубов: процедура с лампой"
+                alt="Косметический кабинет: клиентка в кресле заполняет анкету"
                 fill
                 sizes={quizTeethImageSizes}
                 quality={90}

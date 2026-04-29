@@ -7,8 +7,14 @@ import { RevealOnScroll } from "@/components/home/reveal-on-scroll";
 import { WhyUsAnimatedShell } from "@/components/home/why-us-animated-shell";
 import { cn } from "@/lib/utils";
 
-const heroTeethImageSrc = "/hero-teeth-whitening.png";
-const quizTeethImageSrc = "/quiz-teeth-whitening.png";
+const heroTeethImageSrc = "/hero-whitening-led.png";
+const quizTeethImageSrc = "/hero-teeth-whitening.png";
+
+/** Стабильное кадрирование между локальной сборкой и Vercel (одинаковый object-position и sizes). */
+const heroTeethImageSizes =
+  "(max-width: 1024px) 100vw, 584px";
+const quizTeethImageSizes =
+  "(max-width: 1024px) 100vw, 560px";
 
 export const LandingPage = () => {
   return (
@@ -118,11 +124,13 @@ export const LandingPage = () => {
           <div className="relative flex min-h-[20rem] w-full flex-1 flex-col overflow-hidden rounded-[1.25rem] bg-gray-100 shadow-[0_8px_32px_rgba(15,23,42,0.07)] ring-1 ring-black/[0.06] lg:min-h-0 lg:flex-1 lg:self-stretch">
             <Image
               src={heroTeethImageSrc}
-              alt="Косметическое отбеливание зубов: процедура с лампой"
+              alt="Косметическое отбеливание зубов: LED-лампа и процедура"
               fill
-              sizes="(max-width: 1024px) 100vw, min(520px, 45vw)"
-              className="object-cover object-[center_28%]"
+              sizes={heroTeethImageSizes}
+              quality={90}
               priority
+              className="object-cover"
+              style={{ objectPosition: "50% 42%" }}
             />
             <div
               className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/45 to-transparent sm:h-32"
@@ -153,9 +161,11 @@ export const LandingPage = () => {
                 src={quizTeethImageSrc}
                 alt="Косметическое отбеливание зубов: процедура с лампой"
                 fill
-                sizes="(max-width: 1024px) 100vw, 46vw"
-                className="object-cover object-center"
+                sizes={quizTeethImageSizes}
+                quality={90}
                 priority
+                className="object-cover"
+                style={{ objectPosition: "50% 50%" }}
               />
               <div
                 className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(42%,11rem)] bg-gradient-to-r from-transparent via-[#F4F5F7]/55 to-[#F4F5F7] sm:w-[min(38%,13rem)] lg:w-[min(34%,15rem)]"

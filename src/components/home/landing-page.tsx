@@ -48,58 +48,42 @@ export const LandingPage = () => {
             <div className="relative isolate grid h-full min-h-[13rem] grid-cols-2 grid-rows-2 gap-3 sm:min-h-[15rem] sm:gap-4 lg:min-h-0 lg:flex-1 [&>*]:h-full [&>*]:min-h-0">
               <WhyCard
                 compact
-                num="01"
-                title={
-                  <span className="uppercase tracking-[0.06em]">
-                    Лёгкий старт
-                  </span>
-                }
+                title="Лёгкий старт"
                 text={
                   <p>
-                    Скромный стартовый бюджет — доход уже после обучения. Можно
+                    Скромный стартовый бюджет - доход уже после обучения. Можно
                     выстроить личный бренд и брендированную упаковку.
                   </p>
                 }
               />
               <WhyCard
                 compact
-                num="02"
-                title={
-                  <span className="uppercase tracking-[0.06em]">
-                    Быстрая окупаемость
-                  </span>
-                }
+                title="Быстрая окупаемость"
                 text={
                   <ul className="list-disc space-y-0.5 pl-3 marker:text-gray-400">
-                    <li>Набор на процедуру — 3,5 $</li>
+                    <li>Набор на процедуру - 3,5 $</li>
                     <li>Геля хватает на 9 процедур</li>
-                    <li>LED-лампа — 310 $</li>
-                    <li>Шкала Vita — 35 $</li>
-                    <li>Очки — 2,2 $</li>
-                    <li>Доставка — от 192 $ (вес, регион)</li>
+                    <li>LED-лампа - 310 $</li>
+                    <li>Шкала Vita - 35 $</li>
+                    <li>Очки - 2,2 $</li>
+                    <li>Доставка - от 192 $ (вес, регион)</li>
                     <li>Срок ~1,5 мес.</li>
                   </ul>
                 }
               />
               <WhyCard
                 compact
-                num="03"
-                title={<span className="uppercase tracking-[0.06em]">Подарок</span>}
+                title="Подарок"
                 text={
                   <p>
-                    С обучением — набор на 20 процедур и LED-лампа в подарок.
+                    С обучением - набор на 20 процедур и LED-лампа в подарок.
                   </p>
                 }
               />
               <WhyCard
                 compact
-                num="04"
                 title={
-                  <>
-                    Актуальные
-                    <br />
-                    знания
-                  </>
+                  <span className="whitespace-nowrap">Актуальные знания</span>
                 }
                 text={
                   <p>
@@ -163,7 +147,7 @@ export const LandingPage = () => {
               <p>При расчёте 1 индивидуального набора + доставка.</p>
               <p>
                 Выходит ~8,13&nbsp;$, а процедура в России в среднем стоит
-                49&nbsp;$ — значит 40&nbsp;$ у нас чистой прибыли.
+                49&nbsp;$ - значит 40&nbsp;$ у нас чистой прибыли.
               </p>
               <p>
                 Если брать по 1 клиенту в день, то получается: 30 дней × 40&nbsp;$ =
@@ -251,13 +235,11 @@ export const LandingPage = () => {
 };
 
 const WhyCard = ({
-  num,
   title,
   text,
   className,
   compact,
 }: {
-  num: string;
   title: ReactNode;
   text: ReactNode;
   className?: string;
@@ -271,17 +253,9 @@ const WhyCard = ({
       className,
     )}
   >
-    <div
-      className={cn(
-        "shrink-0 text-gray-300",
-        compact ? "mb-0.5 text-2xl leading-none sm:text-3xl" : "mb-4 text-6xl",
-      )}
-    >
-      {num}
-    </div>
     <h3
       className={cn(
-        "shrink-0",
+        "shrink-0 tracking-normal",
         compact
           ? "mb-1 font-sans text-[0.75rem] leading-tight font-semibold text-[#111827] sm:text-[0.8125rem]"
           : "mb-4 text-xl",

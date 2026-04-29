@@ -23,4 +23,4 @@ npm run dev
 
 ## Переменные окружения
 
-Шаблон — `.env.example`. Локальные значения держи в `.env.local` (файл в `.gitignore`).
+Шаблон - `.env.example`. Локальные значения держи в `.env.local` (файл в `.gitignore`).

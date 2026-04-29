@@ -16,7 +16,7 @@ export const LandingPage = () => {
             <h1 className="text-[1.875rem] leading-[1.15] font-semibold tracking-[-0.02em] text-[#0f172a] sm:text-[2.125rem] md:text-[2.375rem] lg:text-[2.5rem] lg:leading-[1.12] xl:text-[2.625rem]">
               Отбеливание зубов
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-gray-500 sm:text-xl md:text-2xl md:leading-snug">
+            <p className="max-w-2xl text-base leading-snug text-gray-500 sm:text-lg md:text-xl md:leading-snug">
               Стань бьюти мастером и увеличь свой доход в 5 раз
             </p>
           </div>

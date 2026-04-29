@@ -3,15 +3,19 @@ import type { ReactNode } from "react";
 
 import { CosmeticsQuizCard } from "@/components/home/cosmetics-quiz-card";
 import { ExpandableInfoRow } from "@/components/home/cosmetic-education-row";
+import { RevealOnScroll } from "@/components/home/reveal-on-scroll";
+import { WhyUsAnimatedShell } from "@/components/home/why-us-animated-shell";
 import { cn } from "@/lib/utils";
 
 const heroTeethImageSrc = "/hero-teeth-whitening.png";
+const quizTeethImageSrc = "/quiz-teeth-whitening.png";
 
 export const LandingPage = () => {
   return (
     <div className="min-h-screen bg-[#F9F9FB] text-gray-900">
       <section className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-8 pb-0 pt-6 sm:gap-12 sm:pt-8 lg:grid-cols-2 lg:items-stretch lg:gap-12 lg:pt-10 lg:pb-0">
-        <div className="flex w-full min-h-0 min-w-0 flex-col lg:h-full">
+        <RevealOnScroll>
+          <div className="flex w-full min-h-0 min-w-0 flex-col lg:h-full">
           <div className="shrink-0 font-serif mb-7 w-full min-w-0 space-y-5 text-left md:mb-8 md:space-y-6">
             <h1 className="text-[1.875rem] leading-[1.15] font-semibold tracking-[-0.02em] text-[#0f172a] sm:text-[2.125rem] md:text-[2.375rem] lg:text-[2.5rem] lg:leading-[1.12] xl:text-[2.625rem]">
               Отбеливание зубов
@@ -45,9 +49,10 @@ export const LandingPage = () => {
             id="why-us"
             className="relative mt-9 flex min-h-0 flex-1 flex-col scroll-mt-20 lg:mt-9"
           >
-            <div className="relative isolate grid h-full min-h-[13rem] grid-cols-2 grid-rows-2 gap-3 sm:min-h-[15rem] sm:gap-4 lg:min-h-0 lg:flex-1 [&>*]:h-full [&>*]:min-h-0">
+            <WhyUsAnimatedShell>
               <WhyCard
                 compact
+                className="why-us-card-enter"
                 title="Лёгкий старт"
                 text={
                   <p>
@@ -58,6 +63,7 @@ export const LandingPage = () => {
               />
               <WhyCard
                 compact
+                className="why-us-card-enter"
                 title="Быстрая окупаемость"
                 text={
                   <ul className="list-disc space-y-0.5 pl-3 marker:text-gray-400">
@@ -73,6 +79,7 @@ export const LandingPage = () => {
               />
               <WhyCard
                 compact
+                className="why-us-card-enter"
                 title="Подарок"
                 text={
                   <p>
@@ -82,6 +89,7 @@ export const LandingPage = () => {
               />
               <WhyCard
                 compact
+                className="why-us-card-enter"
                 title={
                   <span className="whitespace-nowrap">Актуальные знания</span>
                 }
@@ -93,18 +101,20 @@ export const LandingPage = () => {
                 }
               />
 
-              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-2">
+              <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center p-2">
                 <h2 className="font-serif max-w-[min(100%,11rem)] text-center text-[1.0625rem] leading-[1.15] font-semibold tracking-tight text-[#0f172a] sm:text-xl">
-                  <span className="inline-block rounded-full bg-[#F9F9FB]/95 px-3 py-2 shadow-[0_1px_3px_rgba(15,23,42,0.08)] ring-1 ring-black/[0.06] backdrop-blur-[1px]">
+                  <span className="why-us-badge-enter inline-block rounded-full bg-[#F9F9FB]/95 px-3 py-2 shadow-[0_1px_3px_rgba(15,23,42,0.08)] ring-1 ring-black/[0.06] backdrop-blur-[1px]">
                     Почему мы
                   </span>
                 </h2>
               </div>
-            </div>
+            </WhyUsAnimatedShell>
           </div>
         </div>
+        </RevealOnScroll>
 
-        <div className="relative mt-10 flex min-h-0 w-full min-w-0 flex-col self-stretch lg:mt-0 lg:h-full lg:min-h-0">
+        <RevealOnScroll delayMs={80}>
+          <div className="relative mt-10 flex min-h-0 w-full min-w-0 flex-col self-stretch lg:mt-0 lg:h-full lg:min-h-0">
           <div className="relative flex min-h-[20rem] w-full flex-1 flex-col overflow-hidden rounded-[1.25rem] bg-gray-100 shadow-[0_8px_32px_rgba(15,23,42,0.07)] ring-1 ring-black/[0.06] lg:min-h-0 lg:flex-1 lg:self-stretch">
             <Image
               src={heroTeethImageSrc}
@@ -121,23 +131,42 @@ export const LandingPage = () => {
             <div className="absolute inset-x-0 bottom-0 z-10 flex justify-center p-4 pb-5 sm:p-5 sm:pb-6">
               <a
                 href="#contacts"
-                className="pointer-events-auto inline-flex w-full max-w-xs items-center justify-center rounded-full bg-green-400 px-6 py-3 text-center text-sm font-medium text-gray-900 shadow-[0_4px_20px_rgba(0,0,0,0.2)] transition hover:bg-green-500 sm:max-w-none sm:w-auto"
+                className="pointer-events-auto inline-flex w-full max-w-xs items-center justify-center rounded-full bg-green-400 px-6 py-3 text-center text-sm font-medium text-gray-900 transition hover:bg-green-500 sm:max-w-none sm:w-auto"
               >
                 Приобрести курс
               </a>
             </div>
           </div>
         </div>
+        </RevealOnScroll>
       </section>
 
       <section id="cosmetics" className="mx-auto max-w-7xl scroll-mt-20 px-8 pb-16 pt-12 lg:pt-14">
         <div className="flex flex-col gap-12 lg:gap-14">
-          <div className="scroll-mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
-            <div className="sm:col-span-2 lg:col-span-2 lg:col-start-2">
-              <CosmeticsQuizCard />
+          <RevealOnScroll>
+          <div
+            id="quiz"
+            className="scroll-mt-20 flex flex-col overflow-hidden rounded-[1.75rem] bg-[#F4F5F7] shadow-[0_8px_30px_rgba(15,23,42,0.08)] ring-1 ring-black/[0.08] lg:flex-row lg:items-stretch"
+          >
+            <div className="relative aspect-[16/9] min-h-[14rem] w-full shrink-0 sm:min-h-[18rem] lg:aspect-auto lg:h-auto lg:min-h-[22rem] lg:w-[46%] lg:flex-none lg:self-stretch">
+              <Image
+                src={quizTeethImageSrc}
+                alt="Косметическое отбеливание зубов: процедура с лампой"
+                fill
+                sizes="(max-width: 1024px) 100vw, 46vw"
+                className="object-cover object-center"
+                priority
+              />
+              <div
+                className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(42%,11rem)] bg-gradient-to-r from-transparent via-[#F4F5F7]/55 to-[#F4F5F7] sm:w-[min(38%,13rem)] lg:w-[min(34%,15rem)]"
+                aria-hidden
+              />
             </div>
+            <CosmeticsQuizCard className="min-h-[22rem] flex-1 rounded-none border-t border-gray-200/80 shadow-none ring-0 sm:min-h-[24rem] lg:min-h-0 lg:h-full lg:rounded-none lg:border-t-0 lg:border-l-0" />
           </div>
+          </RevealOnScroll>
 
+          <RevealOnScroll delayMs={70}>
           <div
             id="contacts"
             className="scroll-mt-20 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-6 [&>*]:min-h-0"
@@ -228,6 +257,7 @@ export const LandingPage = () => {
             </ul>
           </VerticalFeatureCard>
         </div>
+        </RevealOnScroll>
         </div>
       </section>
     </div>
@@ -257,7 +287,7 @@ const WhyCard = ({
       className={cn(
         "shrink-0 tracking-normal",
         compact
-          ? "mb-1 font-sans text-[0.75rem] leading-tight font-semibold text-[#111827] sm:text-[0.8125rem]"
+          ? "mb-1 w-full text-center font-sans text-[0.75rem] leading-tight font-semibold text-[#111827] sm:text-[0.8125rem]"
           : "mb-4 text-xl",
       )}
     >

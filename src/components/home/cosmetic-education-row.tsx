@@ -28,7 +28,7 @@ export const ExpandableInfoRow = ({
       <div
         className={cn(
           "relative bg-white shadow-[0_1px_2px_rgba(15,23,42,0.05),0_4px_16px_rgba(15,23,42,0.06)] ring-1 ring-black/[0.04]",
-          "transition-shadow duration-200 hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.06)]",
+          "transition-shadow duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-150 hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_24px_rgba(15,23,42,0.06)]",
           expanded
             ? "rounded-t-[1.25rem] rounded-b-none"
             : "rounded-[1.25rem]",
@@ -48,7 +48,7 @@ export const ExpandableInfoRow = ({
           <ChevronDown
             aria-hidden
             className={cn(
-              "size-[1.125rem] shrink-0 text-gray-400 transition-transform duration-200 sm:size-5",
+              "size-[1.125rem] shrink-0 text-gray-400 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-150 sm:size-5",
               expanded && "rotate-180",
             )}
           />
@@ -59,10 +59,11 @@ export const ExpandableInfoRow = ({
         role="region"
         aria-hidden={!expanded}
         className={cn(
-          "absolute top-full right-0 left-0 z-50 -mt-px rounded-b-[1.25rem] border border-black/[0.06] border-t-0 bg-white px-5 pt-3 pb-4 shadow-[0_12px_28px_rgba(15,23,42,0.12)] transition-opacity duration-150",
+          "absolute top-full right-0 left-0 z-50 -mt-px rounded-b-[1.25rem] border border-black/[0.06] border-t-0 bg-white shadow-[0_12px_28px_rgba(15,23,42,0.12)]",
+          "overflow-hidden px-5 transition-[max-height,opacity,transform,padding] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-150",
           expanded
-            ? "visible opacity-100"
-            : "pointer-events-none invisible opacity-0",
+            ? "pointer-events-auto max-h-[min(80vh,28rem)] translate-y-0 opacity-100 pt-3 pb-4"
+            : "pointer-events-none max-h-0 -translate-y-1 opacity-0 py-0",
         )}
       >
         <div

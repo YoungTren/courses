@@ -23,7 +23,7 @@ export const LandingPage = () => {
 
           <div
             id="services"
-            className="shrink-0 scroll-mt-20 space-y-4 font-serif md:space-y-5"
+            className="shrink-0 scroll-mt-20 space-y-4 pb-[5mm] font-serif md:space-y-5"
           >
             <ExpandableInfoRow title="Минимум усилий в работе">
               <p>
@@ -104,8 +104,8 @@ export const LandingPage = () => {
           </div>
         </div>
 
-        <div className="relative mt-10 flex min-h-0 w-full flex-col lg:mt-0 lg:h-full">
-          <div className="relative min-h-[20rem] w-full flex-1 overflow-hidden rounded-[1.25rem] bg-gray-100 shadow-[0_8px_32px_rgba(15,23,42,0.07)] ring-1 ring-black/[0.06] lg:min-h-0">
+        <div className="relative mt-10 flex min-h-0 w-full min-w-0 flex-col self-stretch lg:mt-0 lg:h-full lg:min-h-0">
+          <div className="relative flex min-h-[20rem] w-full flex-1 flex-col overflow-hidden rounded-[1.25rem] bg-gray-100 shadow-[0_8px_32px_rgba(15,23,42,0.07)] ring-1 ring-black/[0.06] lg:min-h-0 lg:flex-1 lg:self-stretch">
             <Image
               src={heroTeethImageSrc}
               alt="Косметическое отбеливание зубов: процедура с лампой"
